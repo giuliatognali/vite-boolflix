@@ -1,4 +1,5 @@
 <script>
+//import component from node modules
 import CountryFlag from 'vue-country-flag-next';
 
 export default {
@@ -13,7 +14,7 @@ export default {
         getLang() {
             switch (this.info.original_language) {
                 case "en":
-                    return "gb";
+                    return "us";
                 case "ko":
                     return "kp";
                 case "zh":
@@ -23,6 +24,12 @@ export default {
                 default:
                     return this.info.original_language;
             }
+        },
+        title(){
+            return this.info.title || this.info.name;
+        },
+        originaleTitle(){
+            this.info.original_title || this.info.original_name;
         }
     }
 }
@@ -31,13 +38,13 @@ export default {
 
 <template>
     <div>
-        <h2>{{ info.title }}</h2>
-        <h3>{{ info.original_title }}</h3>
-        <!--         <div>{{ info.original_language }}</div> -->
+        <h2>{{ title }}</h2>
+        <h3>{{ originaleTitle }}</h3>
         <div><country-flag :country='getLang' size='normal' /></div>
-
         <div>{{ info.vote_average }}</div>
     </div>
+
+    
 </template>
 
  

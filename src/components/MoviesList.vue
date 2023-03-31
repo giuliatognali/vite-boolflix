@@ -17,14 +17,19 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <main>
         <ul>
             <li v-for="movie in store.movies">
                 <CardApp :info="movie"/>
             </li>
         </ul>
+        <ul>
+            <li v-for="serie in store.tvSeries">
+                <CardApp :info="serie"/>
+            </li>
+        </ul>
         
-    </div>
+    </main>
 </template>
 
 
