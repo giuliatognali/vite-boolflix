@@ -6,7 +6,8 @@ export const store = reactive({
         endPointMovie: '/search/movie',
         endPointTv:'/search/tv',
         apiKey: 'a59f32821b2c16a5bbea9e90a396c5ab',
-        defaultLang: 'it-IT'
+        defaultLang: 'it-IT',
+        urlImg: "https://image.tmdb.org/t/p/w342"
     },
     movies: [],
     tvSeries:[],

@@ -4,6 +4,11 @@ import CountryFlag from 'vue-country-flag-next';
 
 export default {
     name: 'CardApp',
+    data() {
+        return {
+            urlImg: "https://image.tmdb.org/t/p/w342"
+        }
+    },
     components: {
         CountryFlag
     },
@@ -25,11 +30,14 @@ export default {
                     return this.info.original_language;
             }
         },
-        title(){
+        title() {
             return this.info.title || this.info.name;
         },
-        originaleTitle(){
+        originaleTitle() {
             this.info.original_title || this.info.original_name;
+        },
+        getVote(){
+            
         }
     }
 }
@@ -40,11 +48,13 @@ export default {
     <div>
         <h2>{{ title }}</h2>
         <h3>{{ originaleTitle }}</h3>
-        <div><country-flag :country='getLang' size='normal' /></div>
+        <div>
+            <CountryFlag :country='getLang' size='normal' />
+        </div>
         <div>{{ info.vote_average }}</div>
+        <!-- aggiungere caso in cui non c'è l'immagine -->
+        <div><img :src="urlImg + info.poster_path" :alt="title"> </div>
     </div>
-
-    
 </template>
 
  
