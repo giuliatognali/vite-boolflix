@@ -18,13 +18,11 @@ export default {
     }
   },
   methods: {
-    eventSearch() {
-      console.log('cerco nella lista');
-      console.log(this.store.searchKey);
 
-      //todo fai una sola chiamata per movie e tvserie
-      
-      axios.get(this.store.config.url + this.store.config.endPointMovie, {
+    //definisco una funzione con 2 argomenti
+    callSearch(url, endpoint) {
+
+      axios.get(url + endpoint, {
         //parametri necessari per eseguire la chiamata all'API
         params: {
           api_key: this.store.config.apiKey,
@@ -33,23 +31,21 @@ export default {
         }
       }).then((response) => {
         console.log(response);
-        // ci salviamo i risultati dell'API e salviamo nell'array movies
-        this.store.movies = response.data.results;
-      })
-      axios.get(this.store.config.url + this.store.config.endPointTv, {
-        //parametri necessari per eseguire la chiamata all'API
-        params: {
-          api_key: this.store.config.apiKey,
-          lang: this.store.config.defaultLang,
-          query: this.store.searchKey
+        // ci salviamo i risultati dell'API nell'array movies o tvseries a seconda del caso.
+        if (endpoint === '/search/movie') {
+          this.store.movies = response.data.results;
+        } else {
+          this.store.tvSeries = response.data.results;
         }
-      }).then((response) => {
-        console.log(response);
-        // ci salviamo i risultati dell'API e salviamo nell'array tvSeries 
-        this.store.tvSeries = response.data.results;
       })
+    },
+    eventSearch() {
+      //richiamo la funzione
+      this.callSearch(this.store.config.urlApi, this.store.config.endPointMovie);
+      this.callSearch(this.store.config.urlApi, this.store.config.endPointTv);
     }
   }
+
 }
 </script>
 
