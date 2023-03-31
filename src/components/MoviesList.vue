@@ -20,7 +20,7 @@ export default {
     <div>
         <ul>
             <li v-for="movie in store.movies">
-                <CardApp/>
+                <CardApp :info="movie"/>
             </li>
         </ul>
         
