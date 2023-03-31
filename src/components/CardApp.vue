@@ -1,18 +1,24 @@
 <script>
-    export default {
-        name: 'CardApp'
-        
+import { store} from '../store'; 
+export default {
+    name: 'CardApp',
+    data(){
+        return{
+            store
+        }
     }
-</script>
+
+}
+</script> 
+
+
 <template>
     <div>
-        card app
 
+        
     </div>
 </template>
 
+ 
 
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

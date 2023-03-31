@@ -1,4 +1,5 @@
 <script>
+import { store} from '../store'; 
 import SearchBar from './SearchBar.vue';
     export default {
         name: 'HeaderApp',
