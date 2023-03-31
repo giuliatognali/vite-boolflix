@@ -1,9 +1,9 @@
 <script>
-import SearcBar from './SearcBar.vue';
+import SearchBar from './SearchBar.vue';
     export default {
         name: 'HeaderApp',
         components: {
-            SearcBar
+            SearchBar
         }
         
     }
@@ -12,7 +12,7 @@ import SearcBar from './SearcBar.vue';
 
 <template>
     <div>
-<SearcBar/>
+<SearchBar @searchRequest="$emit('searchElement')"/>
 <br>
     </div>
 </template>

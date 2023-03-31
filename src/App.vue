@@ -9,12 +9,17 @@ export default {
   components: {
     HeaderApp,
     MainApp
+  },
+  methods:{
+    eventSearch(){
+      console.log('cerco nella lista');
+    }
   }
 }
 </script>
 
 <template>
-  <HeaderApp />
+  <HeaderApp @searchElement="eventSearch"/>
   <MainApp />
 </template>
 
