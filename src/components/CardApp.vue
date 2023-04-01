@@ -36,9 +36,8 @@ export default {
         originaleTitle() {
             this.info.original_title || this.info.original_name;
         },
-        getVote(){
+        getVote() {
             return Math.ceil(this.info.vote_average / 2);
-
         }
     }
 }
@@ -47,17 +46,18 @@ export default {
 
 <template>
     <div>
-        <h2>{{ title }}</h2>
-        <h3>{{ originaleTitle }}</h3>
-        <div>
-            <CountryFlag :country='getLang' size='normal' />
+        <div class="container-info">
+            <h2>{{ title }}</h2>
+            <h3>{{ originaleTitle }}</h3>
+            <div>
+                <CountryFlag :country='getLang' size='small' />
+            </div>
+            <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote" />
+            <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote" />
+            <p> {{ info.overview }}</p>
         </div>
-        <div>{{ getVote }}</div>
-        <div v-for="n in 5">{{  }}</div>
-        <font-awesome-icon icon="fa-solid fa-star"  v-for="n in getVote" />
-        <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-getVote"/>
-        <div>
-            <img :src="urlImg + info.poster_path" :alt="title"> 
+        <div class="container-img">
+            <img :src="urlImg + info.poster_path" :alt="title">
         </div>
     </div>
 </template>

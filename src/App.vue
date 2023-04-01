@@ -43,6 +43,7 @@ export default {
       //richiamo la funzione
       this.callSearch(this.store.config.urlApi, this.store.config.endPointMovie);
       this.callSearch(this.store.config.urlApi, this.store.config.endPointTv);
+      this.store.searchKey = '';
     }
   }
 

@@ -11,9 +11,11 @@ import MoviesList from './MoviesList.vue';
 
 
 <template>
-    <div>
+    <main>
 <MoviesList/>
-    </div>
+<div>Search somethin to watch!</div>
+
+    </main>
 </template>
 
 

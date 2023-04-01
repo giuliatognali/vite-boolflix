@@ -11,10 +11,10 @@ import SearchBar from './SearchBar.vue';
 
 
 <template>
-    <div>
+    <header>
 <SearchBar @searchRequest="$emit('searchElement')"/>
-<br>
-    </div>
+
+    </header>
 </template>
 
 
