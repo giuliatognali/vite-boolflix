@@ -7,6 +7,8 @@ Per installare il progetto:
 In questo esercizio iniziamo a replicare la logica che sta dietro a tantissimi siti che permettono la visione di film e telefilm.
 Per fare questo utilizzeremo un API che ci permette di avere un insieme di risultati congrui alla nostra ricerca.
 
+<img src="public/img-reademe/Boolflix.jpeg" width="80%" >
+
 ## Milestone 0:
 Progettare la struttura del global state.
 

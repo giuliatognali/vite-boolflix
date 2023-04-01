@@ -37,7 +37,8 @@ export default {
             this.info.original_title || this.info.original_name;
         },
         getVote(){
-            
+            return Math.ceil(this.info.vote_average / 2);
+
         }
     }
 }
@@ -51,9 +52,13 @@ export default {
         <div>
             <CountryFlag :country='getLang' size='normal' />
         </div>
-        <div>{{ info.vote_average }}</div>
-        <!-- aggiungere caso in cui non c'è l'immagine -->
-        <div><img :src="urlImg + info.poster_path" :alt="title"> </div>
+        <div>{{ getVote }}</div>
+        <div v-for="n in 5">{{  }}</div>
+        <font-awesome-icon icon="fa-solid fa-star"  v-for="n in getVote" />
+        <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-getVote"/>
+        <div>
+            <img :src="urlImg + info.poster_path" :alt="title"> 
+        </div>
     </div>
 </template>
 
