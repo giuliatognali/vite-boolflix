@@ -1,2 +1,10 @@
 @use "./_partial/reset" as *;
 @use "./_partial/variables" as *;
+
+// Import all of Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+body{
+    font-family: "Lato";  
+    background-color: $primary-color
+}
