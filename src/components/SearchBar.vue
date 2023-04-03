@@ -29,7 +29,9 @@ export default {
 @use "../assets/scss/_partial/variables" as *;
 
 form{
-    width: 300px;
+    min-width: 300px;
+    padding: 20px;
+    margin-bottom: 5px;
 }
 input{
     color: $secondary-color;

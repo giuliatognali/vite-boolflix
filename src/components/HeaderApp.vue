@@ -11,7 +11,7 @@ export default {
 
 
 <template>
-    <header class="row">
+    <header class="row flex-sm-column flex-md-row">
         <div class="col">
             <h1>Boolflix</h1>
         </div>
@@ -28,29 +28,26 @@ export default {
 header {
     z-index: 5;
     position: fixed;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: $primary-color;
+    border-bottom: 1px solid $secondary-color;
 
-    .search-bar{
-        padding-bottom: 20px;
-    }
 }
 
 .col {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $primary-color;
-
+    padding: 0;
 }
 
 h1 {
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 4rem;
     color: red;
-    padding: 20px 30px;
+    padding: 10px;
     text-align: center;
 
 }</style>
