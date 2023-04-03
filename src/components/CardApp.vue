@@ -87,16 +87,6 @@ export default {
 
         img {
             height: 100%;
-
-            &:hover {
-                z-index: 0;
-            }
-        }
-
-        &:hover {
-            opacity: 0.2;
-            transition: 0.5s;
-            z-index: 0;
         }
 
     }
@@ -133,6 +123,12 @@ export default {
 
         }
     }
+}
+.ms-card:hover .container-img{
+    opacity: 0;
+            transition: 0.5s ease-in-out;
+            z-index: 0;
+
 }
 
 ::-webkit-scrollbar {
