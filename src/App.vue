@@ -26,7 +26,7 @@ export default {
         //parametri necessari per eseguire la chiamata all'API
         params: {
           api_key: this.store.config.apiKey,
-          lang: this.store.config.defaultLang,
+          language: this.store.config.defaultLang,
           query: this.store.searchKey
         }
       }).then((response) => {

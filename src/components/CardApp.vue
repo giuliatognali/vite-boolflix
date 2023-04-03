@@ -55,14 +55,17 @@ export default {
         <div class="container-info">
             <h2>{{ title }}</h2>
             <h3>{{ original_Title }}</h3>
-            <div class="lang">
-                <CountryFlag :country='getLang' size='medium' />
+            <div class="icons d-flex align-items-center justify-content-between">
+                <div class="lang">
+                    <CountryFlag :country='getLang' size='medium' />
+                </div>
+                <div class="vote">
+                    <span> Valutazione:</span>
+                    <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote" />
+                    <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote" />
+                </div>
             </div>
-            <div class="vote">
-                <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVote" />
-                <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote" />
-            </div>
-            <div class="overview overflow-auto">
+            <div class="overview overflow-auto ">
                 <p> {{ info.overview }}</p>
             </div>
         </div>
@@ -84,6 +87,7 @@ export default {
 
         img {
             width: 100%;
+            opacity: 0.2;
 
             &:hover {
                 z-index: 0;
@@ -107,8 +111,12 @@ export default {
         width: 100%;
         height: 100%;
         border: 1px solid $secondary-color;
-        padding: 10px;
+        padding: 10px 20px;
 
+        h2{
+            font-weight: 600;
+            padding-top: 10px;
+        }
 
         h3 {
             font-size: 20px;
@@ -116,10 +124,15 @@ export default {
 
         .vote {
             color: gold;
+            span{
+                color: $secondary-color;
+                padding-right: 5px
+            }
         }
 
         .overview {
             max-height: 300px;
+            z-index: 3;
 
         }
     }
