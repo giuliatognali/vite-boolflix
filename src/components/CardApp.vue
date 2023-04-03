@@ -57,7 +57,7 @@ export default {
             <h3>{{ original_Title }}</h3>
             <div class="icons d-flex align-items-center justify-content-between">
                 <div class="lang">
-                    <CountryFlag :country='getLang' size='medium' />
+                    <CountryFlag :country='getLang' size='normal'/>
                 </div>
                 <div class="vote">
                     <span> Valutazione:</span>

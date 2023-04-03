@@ -12,7 +12,7 @@ export default {
 
 <template>
     <main>
-        <MoviesList />
+                <MoviesList />
     </main>
 </template>
 
@@ -22,7 +22,7 @@ export default {
 
 main {
     margin: 0 20px;
-    padding-top: 250px;
+    padding-top: 150px;
         overflow-y: auto;
     h2 {
     color: $secondary-color;
