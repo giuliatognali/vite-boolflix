@@ -11,9 +11,13 @@ export default {
 
 
 <template>
-    <header>
-        <h1>Boolflix</h1>
-        <SearchBar @searchRequest="$emit('searchElement')" />
+    <header class="row">
+        <div class="col">
+            <h1>Boolflix</h1>
+        </div>
+        <div class="col search-bar">
+            <SearchBar @searchRequest="$emit('searchElement')" />
+        </div>
     </header>
 </template>
 
@@ -22,13 +26,24 @@ export default {
 @use "../assets/scss/_partial/variables" as *;
 
 header {
+    z-index: 5;
     position: fixed;
-    width: 100%;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+
+    .search-bar{
+        padding-bottom: 20px;
+    }
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $primary-color;
-    z-index: 5;
+
 }
 
 h1 {
@@ -36,6 +51,6 @@ h1 {
     font-size: 5rem;
     color: red;
     padding: 20px 30px;
+    text-align: center;
 
-}
-</style>
+}</style>

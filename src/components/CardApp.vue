@@ -65,9 +65,9 @@ export default {
                     <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getVote" />
                 </div>
             </div>
-            <div class="overview overflow-auto ">
-                <p> {{ info.overview }}</p>
-            </div>
+            
+                <p class="overview "> {{ info.overview }}</p>
+            
         </div>
 
     </article>
@@ -86,8 +86,7 @@ export default {
         z-index: 2;
 
         img {
-            width: 100%;
-            opacity: 0.2;
+            height: 100%;
 
             &:hover {
                 z-index: 0;
@@ -101,9 +100,6 @@ export default {
         }
 
     }
-
-
-
     .container-info {
         position: absolute;
         top: 0;
@@ -131,8 +127,9 @@ export default {
         }
 
         .overview {
-            max-height: 300px;
-            z-index: 3;
+            max-height: 150px;
+            overflow-y: auto;
+            padding-bottom: 5px;
 
         }
     }

@@ -12,12 +12,7 @@ export default {
 
 <template>
     <main>
-        <div>
-            <h2>Search something to watch!</h2>
-        </div>
         <MoviesList />
-
-
     </main>
 </template>
 
@@ -27,7 +22,7 @@ export default {
 
 main {
     margin: 0 20px;
-    padding-top: 150px;
+    padding-top: 250px;
         overflow-y: auto;
     h2 {
     color: $secondary-color;

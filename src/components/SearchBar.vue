@@ -29,9 +29,16 @@ export default {
 <style lang="scss" scoped>
 
 @use "../assets/scss/_partial/variables" as *;
+
+form{
+    width: 300px;
+}
 input{
     color: $secondary-color;
     background-color: $primary-color;
+    padding: 10px;
+    border-radius: 3px;
+
 }
 
 </style>
